@@ -33,9 +33,11 @@ int main()
             // start mouse click
             inp.mi.dwFlags = mouseDown;
             SendInput(1, &inp, sizeof(INPUT));
+            // stop mouse click
             inp.mi.dwFlags = mouseUp;
             SendInput(1, &inp, sizeof(INPUT));
-            Sleep(50);
+            // wait
+            Sleep(30); // Sleep(milliseconds) -> CPS (Clicks Per Second) can be modified here.
         }
     }
     getch();
